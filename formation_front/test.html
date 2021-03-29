@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome/css/font-awesome.min.css" />
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: "Cubano-Regular";
+            src:local('./css/Cubano-Regular.otf'), url("./css/Cubano-Regular.otf") format('opentype');
+        }
+        @font-face{
+            font-family: "Nunito-Regular";
+            src:local('./css/Nunito-Regular.ttf'), url("./css/Nunito-Regular.ttf") format('truetype');
+        }
+        body,html{
+            margin:0;
+            padding:0;
+            font-size: 16px;
+            background: url('./img/pattern.jpg') center;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        section.top{
+            height: 100vh;
+            background: url("./img/trees.jpg") center center;
+            background-size: cover;
+        }
+        .green-underline{
+            border-bottom: 1px solid rgba(19,128,16,0.54);
+        }
+        .text-center{
+            text-align: center;
+        }
+        #intro{
+            display: flex;
+            font-family: "Cubano-Regular";
+        }
+        #intro .txt-lft{
+            padding:10rem 4rem 16rem 4rem;
+            font-size: 5rem;
+            background:rgba(0,0,0,.4);
+            color:white;
+        }
+        #intro .txt-lft a{
+            font-size: 1.4rem;
+            padding:.7rem;
+            text-decoration: none;
+            font-family: "Nunito-Regular";
+            color:white;
+            border:1px solid rgba(19,128,16,0.54);
+            border-radius: 4px;
+        }
+        #intro .txt-rght{
+            text-align: center;
+            margin: 12rem 3rem 10rem 15rem;
+            font-size: 3rem;
+            color:white;
+        }
+
+        #intro .fa-arrow-down{
+            transition:.5s;
+            cursor: pointer;
+        }
+        #intro .fa-arrow-down:hover{
+            color:rgba(19,128,16,0.54);
+            transition:.5s;
+        }
+        /*** BUTTONS ***/
+        .btn-success{
+            font-size: 1.4rem;
+            padding:.7rem;
+            text-decoration: none;
+            font-family: "Nunito-Regular";
+            color:white;
+            border:1px solid rgba(19,128,16,0.54);
+            border-radius: 4px;
+        }
+        .btn-paralax{
+            display: inline-block;
+            margin-top:10px;
+            width: 200px;
+        }
+        .container{
+            width: 1140px;
+            margin:auto;
+        }
+        header{
+            background: #343a40;
+            display: flex;
+            justify-content: space-between;
+        }
+        .section-1{
+            padding-bottom: 50px;
+        }
+
+        .logo{
+            text-decoration: none;
+            color:white;
+            padding: .9rem 0 0 1rem;
+            font-size: 20px;
+            font-family: "Cubano-Regular";
+        }
+        .green-bold{
+            color:rgba(19,128,16,0.54);
+        }
+
+        nav{
+            flex:2 1 auto;
+        }
+        nav ul{
+            list-style: none;
+            font-family: "Nunito-Regular";
+            padding-left: 0;
+        }
+        nav ul li{
+            display: inline-block;
+            margin:0 1.4rem;
+            padding-bottom: .3rem;
+            border-bottom: 1px solid rgba(19,128,16,0);
+            color: #aaa;
+            cursor: pointer;
+            transition:.3s;
+        }
+        nav ul li:hover{
+            border-bottom: 1px solid rgba(19,128,16,0.54);
+            padding-bottom: .3rem;
+            transition:.3s;
+        }
+        #part_search{
+            padding: .5rem 1rem;
+        }
+        #part_search input,#part_search button{
+            height: 38px;
+            border-radius: 5px;
+            border:none;
+            padding-left: .5rem;
+
+        }
+        #part_search input{
+            width: 250px;
+            text-transform: uppercase;
+            font-family: "Cubano-Regular";
+            padding-left: .7rem;
+        }
+        #part_search button{
+            width: 80px;
+            background: transparent;
+            border:1px solid rgba(19,128,16,0.54);
+            color:rgb(19,128,16);
+        }
+        .descr{
+            font-family: "Cubano-Regular";
+            text-align: center;
+            padding-top: 5rem;
+        }
+        .descr h1{
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+        .descr p{
+            font-size: 1.2rem
+        }
+        #features{
+            margin-top: 5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        #features .feature{
+            text-align: center;
+            padding: 1rem;
+            font-family: "Nunito-Regular";
+        }
+        #features .feature p{
+            font-size: 1.2rem;
+        }
+        #features hr{
+            width: 50%;
+            margin-top: 1.5rem;
+            border-top:1px solid  rgba(19,128,16,1);
+        }
+        /***** Time Heading ***/
+        #timeline-section{
+            background: white;
+            padding-top: 5rem;
+            font-family: "Cubano-Regular";
+            margin: 0;
+        }
+        .timeline{
+            position: relative;
+            list-style: none;
+            padding:50px 0 80px;
+            margin:0;
+        }
+        .timeline-title{
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .timeline:before{
+            content:"";
+            position: absolute;
+            width: 3px;
+            top:0;
+            bottom: 0;
+            left:50%;
+            margin-left: -1.25px;
+            background: #eeeeee;
+        }
+        .timeline-heading{
+            font-family: "Cubano-Regular";
+        }
+        .timeline-head p small{
+            font-family: "Nunito-Regular";
+            color:#6c757d;
+        }
+        .timeline-heading h2{
+            font-size: 2rem;
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+        .timeline-heading p{
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+        }
+        .timeline-body{
+            font-family: "Nunito-Regular";
+        }
+        .timeline > li{
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline > li:before,
+        .timeline > li:after{
+            content: "";
+            display: table;
+        }
+        .timeline > li:after{
+            clear: both;
+        }
+        .timeline > li > .timeline-panel{
+            width: 50%;
+            float: left;
+            padding:20px;
+            background: white;
+            box-shadow: 0 1px 6px rgba(0,0,0,.172);
+        }
+        .timeline > li:not(.timeline-inverted){
+            padding-right: 90px;
+        }
+        .timeline > li.timeline-inverted{
+            padding-left: 90px;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel{
+            float: right;
+        }
+        .timeline-badge{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            left:50%;
+            margin-left: -25px;
+            text-align: center;
+            border-radius: 50%;
+            background: rgba(19,128,16,1);
+            color:white;
+        }
+        /****SECTION PARALAX***/
+        #section-parallax{
+            font-family: "Cubano-Regular";
+            background:url("./img/trees.jpg") center fixed;
+            background-size: cover;
+            color:white;
+            padding:140px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="top">
+          <div class="container">
+              <div id="intro">
+                  <div class="txt-lft">
+                      <p>We.<br>Plant.<br>Trees.<br> <a href="">Learn more</a></p>
+                  </div>
+                  <div class="txt-rght">
+                      <p>For <span class="green-bold">every</span> item sold, we plant 1 tree.<br><br> Want to beacome a part of it ?<br><i class="fa fa-arrow-down"></i></p>
+                  </div>
+              </div>
+          </div>
+    </section>
+   <header>
+       <a href="#" class="logo">ONE<span class="green-bold">THREE</span></a>
+       <nav>
+           <ul>
+               <li>Home</li>
+               <li>Features</li>
+               <li>Timeline</li>
+               <li>Products</li>
+               <li>Testimonials</li>
+               <li>Contact us</li>
+           </ul>
+       </nav>
+       <div id="part_search">
+           <form action="">
+               <input type="text" placeholder="Search">
+               <button>Search</button>
+           </form>
+       </div>
+   </header>
+    <section class="section-1">
+        <div class="container">
+            <div class="descr">
+                <h1>What <span class="green-bold">We</span> do ?</h1>
+                <p>Take a look of what span we do as a company</p>
+            </div>
+            <div id="features">
+                <div class="feature">
+                    <i class="fa fa-tree fa-5x"></i>
+                    <hr />
+                    <p>We actualy planted this dam tree a long time ago and don't do anything since.</p>
+                </div>
+                <div class="feature">
+                    <i class="fa fa-leaf fa-5x"></i>
+                    <hr />
+                    <p>This a nother icon to make you believe us that we're actually doing something.</p>
+                </div>
+                <div class="feature">
+                    <i class="fa fa-pagelines fa-5x"></i>
+                    <hr />
+                    <p>Yet another useless icon to represent the useless company we are.</p>
+                </div>
+                <div class="feature">
+                    <i class="fa fa-recycle fa-5x"></i>
+                    <hr />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-2">
+        <div id="timeline-section">
+            <div class="container">
+                <div class="timeline-heading">
+                    <h2 class="text-center">Our <span class="green-bold">Timeline</span></h2>
+                    <p class="text-center">Get grasp of our milestones</p>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-badge">2016</div>
+                        <div class="timeline-panel">
+                            <div class="timeline-head">
+                                 <h4 class="timeline-title">100,000 trees <span class="green-underline">planted</span></h4>
+                                <p><small><i class="fa fa-clock-o"></i> 11 hours ago via twitter</small></p
+                            </div>
+                            <div class="timeline-body">
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi autem consequatur deserunt distinctio doloremque eaque et eveniet, expedita fugit nam, nostrum omnis placeat quisquam ullam! Illum soluta totam veniam.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge">2015</div>
+                        <div class="timeline-panel">
+                            <div class="timeline-head">
+                                <h4 class="timeline-title">First <span class="green-underline">55,031</span> plants bought</h4>
+                                <p><small><i class="fa fa-clock-o"></i> 16 hours ago via twitter</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi autem consequatur deserunt distinctio doloremque eaque et eveniet, expedita fugit nam, nostrum omnis placeat quisquam ullam! Illum soluta totam veniam.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-badge">2014</div>
+                        <div class="timeline-panel">
+                            <div class="timeline-head">
+                                <h4 class="timeline-title">Company <span class="green-underline">founded</span></h4>
+                                <p><small><i class="fa fa-clock-o"></i> 20 hours ago via twitter</small></p
+                            </div>
+                            <div class="timeline-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi autem consequatur deserunt distinctio doloremque eaque et eveniet, expedita fugit nam, nostrum omnis placeat quisquam ullam! Illum soluta totam veniam.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="section-parallax">
+        <div class="container">
+            <div class="txt_para">
+                <h1>Are you ready to be a part of <strong>the story</strong></h1>
+                <a href="" class="btn-success btn-paralax">Yes, please</a>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
